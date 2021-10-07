@@ -57,14 +57,27 @@ public class TripController {
 	}
 
 	@GetMapping("/trip/tripavailablefrom/{availablefrom}")
-	List<Trip> getBytripAvailableFrom(@PathVariable("availablefrom") LocalDate trip_availablefrom) {
-		return tripService.getByTripstartDate(trip_availablefrom);
+	List<Trip> getByTripstartDate(@PathVariable("availablefrom") LocalDate tripavailablefrom) {
+		return tripService.getByTripstartDate(tripavailablefrom);
 
 	}
 
 	@GetMapping("/trip/tripavailableto/{availableto}")
-	List<Trip> getBytripAvailableTo(@PathVariable("availableto") LocalDate trip_availableto) {
-		return tripService.getByTripendDate(trip_availableto);
+	List<Trip> getByTripetartDate(@PathVariable("availableto") LocalDate tripavailableto) {
+		return tripService.getByTripendDate(tripavailableto);
+
+	}
+
+	@GetMapping("/trip/{tripId}")
+	Trip getById(@PathVariable("tripId") int tripId) {
+		return tripService.getById(tripId);
+
+	}
+
+	@GetMapping("/task/tripname/{tripname}/maintenencename/{maintenencename}")
+	List<Trip> getByTripNameAndMaintenanceMaintenenceName(@PathVariable("tripname") String tripname,
+			@PathVariable("maintenencename") String maintenencename) {
+		return tripService.getByTripNameAndMaintenanceMaintenenceName(tripname, maintenencename);
 
 	}
 

@@ -1,6 +1,6 @@
 package com.resources.repository;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,9 +11,9 @@ import com.resources.model.Workers;
 public interface IWorkersRepository extends JpaRepository<Workers, Integer> {
 	
 //derived queries
-//	List<Workers> findByWorkersName(String workersName);
-//	List<Workers> findByWorkersType(String workersType);
-//	List<Workers> findByWorkers_availablefrom(LocalDateTime availableFrom);
-//	List<Workers> findByWorkers_availableto(LocalDateTime availableTo);
+	List<Workers> findByWorkersName(String workersName);
+	List<Workers> findByWorkersType(String workersType);
+	List<Workers> findByWorkersavailablefrom(LocalDate availableFrom);
+	List<Workers> findByWorkersavailableto(LocalDate availableTo);
 
 }

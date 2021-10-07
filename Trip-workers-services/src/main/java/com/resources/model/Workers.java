@@ -33,18 +33,18 @@ public class Workers {
 	private String workersName;
 	@Column(length = 40)
 	private String workersType;
-	private LocalDate workers_availablefrom;
-	private LocalDate workers_availableto;
+	private LocalDate workersavailablefrom;
+	private LocalDate workersavailableto;
 	@Enumerated(EnumType.STRING)
 	private Available availability;
 	
-	public Workers(String workersName, String workersType, LocalDate workers_availablefrom,
-			LocalDate workers_availableto, Available availability) {
+	public Workers(String workersName, String workersType, LocalDate workersavailablefrom,
+			LocalDate workersavailableto, Available availability) {
 		super();
 		this.workersName = workersName;
 		this.workersType = workersType;
-		this.workers_availablefrom = workers_availablefrom;
-		this.workers_availableto = workers_availableto;
+		this.workersavailablefrom = workersavailablefrom;
+		this.workersavailableto = workersavailableto;
 		this.availability = availability;
 	}
 

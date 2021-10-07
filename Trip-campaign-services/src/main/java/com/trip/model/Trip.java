@@ -37,8 +37,8 @@ public class Trip {
 	private String tripName;
 	@Column(length = 40)
 	private String tripOwner;
-	private LocalDate trip_StartDate;
-	private LocalDate trip_EndDate;
+	private LocalDate tripStartDate;
+	private LocalDate tripEndDate;
 	@Column(length = 40)
 	@Enumerated(EnumType.STRING)
 	private Priority tripPriority;
@@ -47,13 +47,13 @@ public class Trip {
 	private Status tripStatus;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "trip")
 	private Set<Maintenence> mainteneceList;
-	public Trip(String tripName, String tripOwner, LocalDate trip_StartDate, LocalDate trip_EndDate,
+	public Trip(String tripName, String tripOwner, LocalDate tripStartDate, LocalDate tripEndDate,
 			Priority tripPriority, Status tripStatus, Set<Maintenence> mainteneceList) {
 		super();
 		this.tripName = tripName;
 		this.tripOwner = tripOwner;
-		this.trip_StartDate = trip_StartDate;
-		this.trip_EndDate = trip_EndDate;
+		this.tripStartDate = tripStartDate;
+		this.tripEndDate = tripEndDate;
 		this.tripPriority = tripPriority;
 		this.tripStatus = tripStatus;
 		this.mainteneceList = mainteneceList;

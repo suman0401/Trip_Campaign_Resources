@@ -29,25 +29,25 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Maintanence {
+public class Maintenence {
 
 	@Id
-	@GeneratedValue(generator = "maintanence_gen", strategy = GenerationType.AUTO)
-	@SequenceGenerator(name = "maintanence_gen", sequenceName = "maintanence_seq", allocationSize = 1, initialValue = 1)
-	private Integer maintanenceId;
+	@GeneratedValue(generator = "maintenence_gen", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "maintenence_gen", sequenceName = "maintenence_seq", allocationSize = 1, initialValue = 1)
+	private Integer maintenenceId;
 	@Column(length = 30)
-	private String maintanenceName;
+	private String maintenenceName;
 	@Column(length = 30)
-	private String maintanenceOwner;
-	private LocalDate maintanenceStartDate;
-	private LocalDate maintanenceEndDate;
+	private String maintenenceOwner;
+	private LocalDate maintenenceStartDate;
+	private LocalDate maintenenceEndDate;
 	@Enumerated(EnumType.STRING)
-	private Priority maintanencePriority;
+	private Priority maintenencePriority;
 	@Column(length = 30)
 	@Enumerated(EnumType.STRING)
-	private Status maintanenceStatus;
+	private Status maintenenceStatus;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "maintanence_id")
+	@JoinColumn(name = "maintenence_id")
 	private Set<Task> taskList;
 	@ManyToOne
 	@JoinColumn(name = "trip_id")

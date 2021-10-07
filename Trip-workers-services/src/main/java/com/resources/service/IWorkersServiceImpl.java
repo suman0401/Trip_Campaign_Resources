@@ -1,5 +1,6 @@
 package com.resources.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -15,43 +16,48 @@ public class IWorkersServiceImpl implements IWorkersService {
 	IWorkersRepository workersRepository;
 
 	@Override
-	public Workers addResources(Workers workers) {
+	public Workers addWorkers(Workers workers) {
 		return workersRepository.save(workers);
 	}
 
 	@Override
-	public void updateResources(Workers workers) {
+	public void updateWorkers(Workers workers) {
 		workersRepository.save(workers);
 	}
 
 	@Override
-	public void deleteResources(int workersId) {
+	public void deleteWorkers(int workersId) {
 		workersRepository.deleteById(workersId);
 	}
 
 	@Override
-	public List<Workers> getallResources() {
+	public List<Workers> getallWorkers() {
 		return workersRepository.findAll();
 	}
 
 	@Override
+	public Workers getById(int workersId) {
+		return workersRepository.getById(workersId);
+	}
+
+	@Override
 	public List<Workers> getByWorkersName(String workersName) {
-		return  null;
+		return workersRepository.findByWorkersName(workersName);
 	}
 
 	@Override
 	public List<Workers> getByWorkersType(String workersType) {
-		return null;
+		return workersRepository.findByWorkersType(workersType);
 	}
 
 	@Override
-	public List<Workers> getByWorkersAvailableFrom(LocalDateTime workers_availablefrom) {
-		return  null;
+	public List<Workers> getByWorkersAvailableFrom(LocalDate workersavailablefrom) {
+		return workersRepository.findByWorkersavailablefrom(workersavailablefrom);
 	}
 
 	@Override
-	public List<Workers> getByWorkersAvailableTo(LocalDateTime workers_availableto) {
-		return  null;
+	public List<Workers> getByWorkersAvailableTo(LocalDate workersavailableto) {
+		return workersRepository.findByWorkersavailableto(workersavailableto);
 	}
 
 }

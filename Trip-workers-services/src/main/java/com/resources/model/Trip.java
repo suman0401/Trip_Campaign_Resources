@@ -46,7 +46,7 @@ public class Trip {
 	@Enumerated(EnumType.STRING)
 	private Status tripStatus;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "trip")
-	private Set<Maintanence> mainteneceList;
+	private Set<Maintenence> mainteneceList;
 
 	
 

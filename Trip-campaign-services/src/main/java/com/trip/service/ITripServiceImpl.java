@@ -12,54 +12,56 @@ import com.trip.repository.ITripRepository;
 @Service
 public class ITripServiceImpl implements ITripService {
 	@Autowired
-	ITripRepository workersRepository;
+	ITripRepository tripRepository;
 
 	@Override
 	public Trip addTrip(Trip trip) {
-		return workersRepository.save(trip);
+		return tripRepository.save(trip);
 	}
 
 	@Override
 	public void updateTrip(Trip trip) {
-		workersRepository.save(trip);
+		tripRepository.save(trip);
 	}
 
 	@Override
 	public void deleteTrip(int tripId) {
-		workersRepository.deleteById(tripId);
+		tripRepository.deleteById(tripId);
 	}
 
 	@Override
 	public List<Trip> getallTrip() {
-		return workersRepository.findAll();
+		return tripRepository.findAll();
 	}
 
 	@Override
 	public List<Trip> getByTripName(String tripName) {
-		// TODO Auto-generated method stub
-		return null;
+		return tripRepository.findByTripName(tripName);
 	}
 
 	@Override
-	public List<Trip> getByTripOwner(String tripType) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Trip> getByTripOwner(String tripowner) {
+		return tripRepository.findByTripOwner(tripowner);
 	}
 
 	@Override
-	public List<Trip> getByTripstartDate(LocalDate trip_startdate) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Trip> getByTripstartDate(LocalDate tripstartdate) {
+		return tripRepository.findByTripStartDate(tripstartdate);
 	}
 
 	@Override
-	public List<Trip> getByTripendDate(LocalDate trip_enddate) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Trip> getByTripendDate(LocalDate tripenddate) {
+		return tripRepository.findByTripEndDate(tripenddate);
 	}
 
+	@Override
+	public Trip getById(int tripId) {
+		return tripRepository.getById(tripId);
+	}
 
-
-
+	@Override
+	public List<Trip> getByTripNameAndMaintenanceMaintenenceName(String tripname, String maintenencename) {
+		return tripRepository.findByTripNameAndMaintenanceMaintenenceName(tripname, maintenencename);
+	}
 
 }

@@ -53,8 +53,8 @@ public class Task {
 	@JoinColumn(name = "task_id")
 	private Set<Workers> workersList;
 	@ManyToOne
-	@JoinColumn(name = "maintanence_id")
-	private Maintanence maintenence;
+	@JoinColumn(name = "maintenence_id")
+	private Maintenence maintenence;
 	@ManyToOne
 	@JoinColumn(name = "trip_id")
 	private Trip trip;

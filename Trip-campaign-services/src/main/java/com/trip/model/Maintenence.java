@@ -49,7 +49,7 @@ public class Maintenence {
 	@ManyToOne
 	@JoinColumn(name = "trip_id")
 	private Trip trip;
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) // , mappedBy = "maintenence")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
 	@JoinColumn(name = "maintenencet_id")
 	private Set<Task> taskList;
 	

@@ -20,22 +20,13 @@ public interface ITripService {
 	void deleteTrip(int tripId);
 	
 	List<Trip> getallTrip();
+	Trip getById(int tripId);
 	List<Trip> getByTripName(String tripName);
-	List<Trip> getByTripOwner(String tripType);
-	List<Trip> getByTripstartDate(LocalDate trip_startdate);
-	List<Trip> getByTripendDate(LocalDate trip_enddate);
-//	List<Trip> getByTripNameAndProjectName(String tripname,String projectname);
+	List<Trip> getByTripOwner(String tripowner);
+	List<Trip> getByTripstartDate(LocalDate tripstartdate);
+	List<Trip> getByTripendDate(LocalDate tripenddate);
+	List<Trip> getByTripNameAndMaintenanceMaintenenceName(String tripname,String maintenencename);
 
 }
 
 
-//private String projectName;
-//@Column(length = 30)
-//private String projectOwner;
-//private LocalDate projectStartDate;
-//private LocalDate projectEndDate;
-//@Enumerated(EnumType.STRING)
-//private Priority projectPriority;
-//@Column(length = 30)
-//@Enumerated(EnumType.STRING)
-//private Status projectStatus;

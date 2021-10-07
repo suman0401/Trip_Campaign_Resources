@@ -25,6 +25,7 @@ public class TripResourcesMicroservicesApplication implements CommandLineRunner 
 
 		Trip trip = new Trip("Ladakh", "Suman", LocalDate.of(2021, 2, 15), LocalDate.of(2021, 2, 25), Priority.HIGH,Status.INPROGRESS, null);
 		tripService.addTrip(trip);
+		
 
 	}
 

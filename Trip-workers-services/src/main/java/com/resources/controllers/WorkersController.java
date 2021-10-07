@@ -1,9 +1,7 @@
 package com.resources.controllers;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
-
-import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,24 +23,30 @@ public class WorkersController {
 	IWorkersService workersService;
 
 	@PostMapping("/workers")
-	Workers addResources(@RequestBody Workers workers) {
-		return workersService.addResources(workers);
+	Workers addWorkers(@RequestBody Workers workers) {
+		return workersService.addWorkers(workers);
 
 	}
 
 	@PutMapping("/workers")
-	void updateResources(@RequestBody Workers workers) {
-		workersService.updateResources(workers);
+	void updateWorkers(@RequestBody Workers workers) {
+		workersService.updateWorkers(workers);
 	}
 
 	@DeleteMapping("/workers/workersId/{workersId}")
-	void deleteResources(@PathVariable("workersId") int workersId) {
-		workersService.deleteResources(workersId);
+	void deleteWorkers(@PathVariable("workersId") int workersId) {
+		workersService.deleteWorkers(workersId);
 	}
 
 	@GetMapping("/workers")
-	List<Workers> getallResources() {
-		return workersService.getallResources();
+	List<Workers> getallWorkers() {
+		return workersService.getallWorkers();
+
+	}
+
+	@GetMapping("/workers/workersId/{workersId}")
+	Workers getById(@PathVariable("workersId") int workersId) {
+		return workersService.getById(workersId);
 
 	}
 
@@ -59,14 +63,14 @@ public class WorkersController {
 	}
 
 	@GetMapping("/workers/workersavailablefrom/{availablefrom}")
-	List<Workers> getByWorkersAvailableFrom(@PathVariable("availablefrom") LocalDateTime workers_availablefrom) {
-		return workersService.getByWorkersAvailableFrom(workers_availablefrom);
+	List<Workers> getByWorkersAvailableFrom(@PathVariable("availablefrom") LocalDate workersavailablefrom) {
+		return workersService.getByWorkersAvailableFrom(workersavailablefrom);
 
 	}
 
 	@GetMapping("/workers/workersavailableto/{availableto}")
-	List<Workers> getByWorkersAvailableTo(@PathVariable("availableto") LocalDateTime workers_availableto) {
-		return workersService.getByWorkersAvailableTo(workers_availableto);
+	List<Workers> getByWorkersAvailableTo(@PathVariable("availableto") LocalDate workersavailableto) {
+		return workersService.getByWorkersAvailableTo(workersavailableto);
 
 	}
 
