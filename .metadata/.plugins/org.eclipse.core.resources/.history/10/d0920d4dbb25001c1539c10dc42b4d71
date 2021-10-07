@@ -1,0 +1,19 @@
+package com.resources.repository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.resources.model.Resources;
+@Repository
+public interface IResourceRepository extends JpaRepository<Resources, Integer> {
+	
+//derived queries
+	List<Resources> getByResourceName(String resourceName);
+	List<Resources> getByResourceType(String resourceType);
+	List<Resources> getByAvailableFrom(LocalDateTime availableFrom);
+	List<Resources> getByAvailableTo(LocalDateTime availableTo);
+
+}

@@ -1,0 +1,36 @@
+package com.resources.model;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@ToString
+public class Resources {
+	@Id
+	@GeneratedValue(generator ="resources_gene",strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "resources_gene",sequenceName = "resources_seq",allocationSize = 1,initialValue = 1)
+	private Integer resourceId;
+	private String resourceName;
+	private String resourceType;
+	private LocalDateTime Resourcesavailablefrom;
+	private LocalDateTime Resourcesavailableto;
+	@ManyToOne
+	private Task task;
+
+}

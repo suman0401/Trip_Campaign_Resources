@@ -1,0 +1,21 @@
+package com.resources.service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import com.resources.model.Workers;
+
+
+public interface IWorkersService {
+	
+	Workers addResources(Workers workers);
+	void updateResources(Workers workers);
+	void deleteResources(int workersId);
+	
+	List<Workers> getallResources();
+	List<Workers> getByResourceName(String resourceName);
+	List<Workers> getByResourceType(String resourceType);
+	List<Workers> getByAvailableFrom(LocalDateTime Resourcesavailablefrom);
+	List<Workers> getByAvailableTo(LocalDateTime Resourcesavailableto);
+
+}

@@ -1,0 +1,59 @@
+package com.resources.controllers;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.resources.model.Workers;
+import com.resources.service.IWorkersService;
+
+@RestController
+@RequestMapping("/workers-service")
+public class WorkersController {
+	@Autowired
+	IWorkersService workersService;
+
+	@PostMapping("/workers")
+	Workers addResources(Workers workers) {
+		return workers;
+
+	}
+
+	void updateResources(Workers workers) {
+
+	}
+
+	void deleteResources(int workersId) {
+
+	}
+
+	List<Workers> getallResources() {
+		return null;
+
+	}
+
+	List<Workers> getByWorkersName(String workersName) {
+		return null;
+
+	}
+
+	List<Workers> getByWorkersType(String workersType) {
+		return null;
+
+	}
+
+	List<Workers> getByWorkersAvailableFrom(LocalDateTime workers_availablefrom) {
+		return null;
+
+	}
+
+	List<Workers> getByWorkersAvailableTo(LocalDateTime workers_availableto) {
+		return null;
+
+	}
+
+}

@@ -1,0 +1,71 @@
+package com.trip.controllers;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.trip.model.Trip;
+import com.trip.service.ITripService;
+
+@RestController
+@RequestMapping("/trip-service")
+public class TripController {
+	@Autowired
+	ITripService tripService;
+
+	@PostMapping("/trip")
+	Trip addTrip(@RequestBody Trip trip) {
+		return tripService.addTrip(trip);
+
+	}
+
+	@PutMapping("/trip")
+	void updateTrip(@RequestBody Trip trip) {
+		tripService.updateTrip(trip);
+	}
+
+	@DeleteMapping("/trip/tripId/{tripId}")
+	void deleteTrip(@PathVariable("tripId") int tripId) {
+		tripService.deleteTrip(tripId);
+	}
+
+	@GetMapping("/trip")
+	List<Trip> getallTrip() {
+		return tripService.getallTrip();
+
+	}
+
+	@GetMapping("/trip/tripname/{tripname}")
+	List<Trip> getBytripName(@PathVariable("tripname") String tripName) {
+		return tripService.getBytripName(tripName);
+
+	}
+
+	@GetMapping("/trip/triptype/{triptype}")
+	List<Trip> getBytripType(@PathVariable("/triptype") String tripType) {
+		return tripService.getBytripType(tripType);
+
+	}
+
+	@GetMapping("/trip/tripavailablefrom/{availablefrom}")
+	List<Trip> getBytripAvailableFrom(@PathVariable("availablefrom") LocalDateTime trip_availablefrom) {
+		return tripService.getBytripAvailableFrom(trip_availablefrom);
+
+	}
+
+	@GetMapping("/trip/tripavailableto/{availableto}")
+	List<Trip> getBytripAvailableTo(@PathVariable("availableto") LocalDateTime trip_availableto) {
+		return tripService.getBytripAvailableTo(trip_availableto);
+
+	}
+
+}

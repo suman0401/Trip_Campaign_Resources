@@ -1,0 +1,57 @@
+package com.resources.service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.resources.model.Workers;
+import com.resources.repository.IWorkersRepository;
+
+@Service
+public class IWorkersServiceImpl implements IWorkersService {
+	@Autowired
+	IWorkersRepository workersRepository;
+
+	@Override
+	public Workers addResources(Workers workers) {
+		return workersRepository.save(workers);
+	}
+
+	@Override
+	public void updateResources(Workers workers) {
+
+	}
+
+	@Override
+	public void deleteResources(int workersId) {
+
+	}
+
+	@Override
+	public List<Workers> getallResources() {
+		return null;
+	}
+
+	@Override
+	public List<Workers> getByResourceName(String workersName) {
+		return null;
+	}
+
+	@Override
+	public List<Workers> getByResourceType(String workersType) {
+		return null;
+	}
+
+	@Override
+	public List<Workers> getByAvailableFrom(LocalDateTime workers_availableFrom) {
+		return null;
+	}
+
+	@Override
+	public List<Workers> getByAvailableTo(LocalDateTime workers_availableTo) {
+		return null;
+	}
+
+}

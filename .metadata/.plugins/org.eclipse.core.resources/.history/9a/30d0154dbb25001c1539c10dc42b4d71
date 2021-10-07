@@ -1,0 +1,57 @@
+package com.resources.service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.resources.model.Resources;
+import com.resources.repository.IResourceRepository;
+
+@Service
+public class IResourcesServiceImpl implements IResourcesService {
+	@Autowired
+	IResourceRepository resourcesRepository;
+
+	@Override
+	public Resources addResources(Resources resources) {
+		return null;
+	}
+
+	@Override
+	public void updateResources(Resources resources) {
+
+	}
+
+	@Override
+	public void deleteResources(int resourceId) {
+
+	}
+
+	@Override
+	public List<Resources> getallResources() {
+		return null;
+	}
+
+	@Override
+	public List<Resources> getByResourceName(String resourceName) {
+		return null;
+	}
+
+	@Override
+	public List<Resources> getByResourceType(String resourceType) {
+		return null;
+	}
+
+	@Override
+	public List<Resources> getByAvailableFrom(LocalDateTime availableFrom) {
+		return null;
+	}
+
+	@Override
+	public List<Resources> getByAvailableTo(LocalDateTime availableTo) {
+		return null;
+	}
+
+}

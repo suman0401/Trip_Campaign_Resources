@@ -1,0 +1,5 @@
+package com.resources.repository;
+
+public interface IResourceRepository {
+
+}

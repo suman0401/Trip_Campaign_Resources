@@ -1,0 +1,58 @@
+package com.resources.model;
+
+import java.time.LocalDate;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@ToString
+public class Trip {
+
+	@Id
+	@GeneratedValue(generator = "trip_gen", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "trip_gen", sequenceName = "trip_seq", initialValue = 1, allocationSize = 1)
+	private Integer taskId;
+	@Column(length = 40)
+	private String taskName;
+	@Column(length = 40)
+	private String taskOwner;
+	private LocalDate taskStartDate;
+	private LocalDate taskEndDate;
+	@Column(length = 40)
+	private String taskPriority;
+	@Column(length = 40)
+	private String taskDuration;
+	@Column(length = 40)
+	private String taskStatus;
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "task")
+	private Set<Resources> resourcesList;
+	@ManyToOne()
+	@JoinColumn(name = "maintenence_id")
+	private Maintenence maintenence;
+	
+
+
+
+
+}

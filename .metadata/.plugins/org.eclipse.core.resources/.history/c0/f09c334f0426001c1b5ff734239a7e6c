@@ -1,0 +1,21 @@
+package com.trip.service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import com.trip.model.Trip;
+
+
+public interface ITripService {
+	
+	Trip addTrip(Trip Trip);
+	void updateTrip(Trip Trip);
+	void deleteTrip(int TripId);
+	
+	List<Trip> getallTrip();
+	List<Trip> getByTripName(String TripName);
+	List<Trip> getByTripOwner(String TripType);
+	List<Trip> getByTripstartDate(LocalDateTime Trip_startdate);
+	List<Trip> getByTripendDate(LocalDateTime Trip_enddate);
+
+}

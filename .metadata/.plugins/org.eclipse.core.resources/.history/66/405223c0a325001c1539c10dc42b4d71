@@ -1,0 +1,10 @@
+package com.resources.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.resources.model.Resources;
+@Repository
+public interface IResourceRepository extends JpaRepository<Resources, Integer> {
+
+}

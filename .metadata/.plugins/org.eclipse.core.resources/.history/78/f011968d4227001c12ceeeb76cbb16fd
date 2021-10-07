@@ -1,0 +1,31 @@
+package com.trip;
+
+import java.time.LocalDateTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.trip.model.Available;
+import com.trip.model.Workers;
+import com.trip.service.ITripService;
+
+@SpringBootApplication
+public class TripResourcesMicroservicesApplication implements CommandLineRunner {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TripResourcesMicroservicesApplication.class, args);
+	}
+
+	@Autowired
+	ITripService workersService;
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		
+
+	}
+
+}

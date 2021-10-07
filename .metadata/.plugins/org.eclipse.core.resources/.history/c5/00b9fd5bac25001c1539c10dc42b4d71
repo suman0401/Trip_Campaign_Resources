@@ -1,0 +1,62 @@
+package com.resources.model;
+
+import java.time.LocalDate;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@ToString
+public class Task {
+
+	@Id
+	@GeneratedValue(generator = "task_gen", strategy = GenerationType.AUTO)
+	@SequenceGenerator(name = "task_gen", sequenceName = "task_seq", initialValue = 1, allocationSize = 1)
+	private Integer taskId;
+	@Column(length = 40)
+	private String taskName;
+	@Column(length = 40)
+	private String taskOwner;
+	private LocalDate taskStartDate;
+	private LocalDate taskEndDate;
+	@Column(length = 40)
+	private String taskPriority;
+	@Column(length = 40)
+	private String taskDuration;
+	@Column(length = 40)
+	private String taskStatus;
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "task")
+	private Set<Resources> resourcesList;
+
+	public Task(String taskName, String taskOwner, LocalDate taskStartDate, LocalDate taskEndDate, String taskPriority,
+			String taskDuration, String taskStatus, Set<Resources> resourcesList) {
+		super();
+		this.taskName = taskName;
+		this.taskOwner = taskOwner;
+		this.taskStartDate = taskStartDate;
+		this.taskEndDate = taskEndDate;
+		this.taskPriority = taskPriority;
+		this.taskDuration = taskDuration;
+		this.taskStatus = taskStatus;
+		this.resourcesList = resourcesList;
+	}
+
+}

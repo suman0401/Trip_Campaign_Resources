@@ -1,0 +1,61 @@
+package com.resources.service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.resources.model.Resources;
+
+@Service
+public class IResourcesServiceImpl implements IResourcesService {
+   IRe
+	@Override
+	public Resources addResources(Resources resources) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateResources(Resources resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteResources(int resourceId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Resources> getallResources() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Resources> getByResourceName(String resourceName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Resources> getByResourceType(String resourceType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Resources> getByAvailableFrom(LocalDateTime availableFrom) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Resources> getByAvailableTo(LocalDateTime availableTo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

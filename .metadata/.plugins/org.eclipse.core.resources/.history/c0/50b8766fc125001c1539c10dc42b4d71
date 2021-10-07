@@ -1,0 +1,19 @@
+package com.resources.repository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.resources.model.Workers;
+@Repository
+public interface IWorkersRepository extends JpaRepository<Workers, Integer> {
+	
+//derived queries
+	List<Workers> getByWorkersName(String workersName);
+	List<Workers> getByWorkersType(String workersType);
+	List<Workers> getByWorkers_availablefrom(LocalDateTime availableFrom);
+	List<Workers> getByWorkers_availableto(LocalDateTime availableTo);
+
+}

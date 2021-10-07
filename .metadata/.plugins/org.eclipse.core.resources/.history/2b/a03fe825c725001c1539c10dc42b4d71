@@ -1,0 +1,26 @@
+package com.resources;
+
+import java.time.LocalDateTime;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.resources.model.Available;
+import com.resources.model.Workers;
+
+@SpringBootApplication
+public class TripResourcesMicroservicesApplication implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(TripResourcesMicroservicesApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		String time="2021-1-05T10:10:10";
+		Workers worker=new Workers("suman", "technician", LocalDateTime.parse(time),LocalDateTime.parse("2005-10-05T12:10:10"),Available.STANDARD,null);
+	}
+
+}
